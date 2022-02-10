@@ -1,0 +1,101 @@
+body {
+  counter-reset: myCounter;
+}
+
+.form {
+  padding: 40px 57px;
+  background: #F2F0F9;
+  box-shadow: 0px 0px 6px rgb(0 0 0 / 25%);
+  border-radius: 20px;
+  left: 50%;
+  position: absolute;
+  top: -1000px;
+  opacity: 0;
+  transform: translateX(-50%);
+  transition-property: top, opacity;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.form__title {
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 26px;
+  text-align: center;
+  color: #8c5793;
+}
+
+.form__label {
+  width: 80px;
+}
+
+.form__group {
+  margin-bottom: 20px;
+
+}
+
+.form__overlay {
+  position: fixed;
+  background: rgb(220 207 227 / 80%);
+  box-shadow: 0px 0px 6px rgb(0 0 0 / 25%);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  width: 100%;
+  z-index: 1;
+}
+
+.form__overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.form__overlay.active .form {
+  opacity: 1;
+  top: 300px;
+}
+
+.close {
+  border: none;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  display: block;
+  width: 18px;
+  height: 18px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('../img/close.svg');
+}
+
+.form__todo {
+  max-width: 700px;
+}
+
+.table__wrapper {
+  width: 1000px;
+}
+
+thead {
+  text-align: center;
+}
+
+.numericRow::before {
+  counter-increment: myCounter;
+  content: counter(myCounter);
+}
+
+.btns {
+  width: 300px;
+}
+
+.task__done {
+  text-decoration: line-through;
+}
